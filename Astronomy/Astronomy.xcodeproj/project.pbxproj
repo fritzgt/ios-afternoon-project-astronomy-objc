@@ -61,19 +61,51 @@
 		04C53C0B2698D7CB00A4E0AA /* Astronomy */ = {
 			isa = PBXGroup;
 			children = (
+				04C53C262698D82100A4E0AA /* Application */,
+				04C53C272698D83600A4E0AA /* Views */,
+				04C53C282698D84500A4E0AA /* Storyboards */,
+				04C53C292698D85900A4E0AA /* Resources */,
+			);
+			path = Astronomy;
+			sourceTree = "<group>";
+		};
+		04C53C262698D82100A4E0AA /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				04C53C0C2698D7CB00A4E0AA /* AppDelegate.h */,
 				04C53C0D2698D7CB00A4E0AA /* AppDelegate.m */,
 				04C53C0F2698D7CB00A4E0AA /* SceneDelegate.h */,
 				04C53C102698D7CB00A4E0AA /* SceneDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		04C53C272698D83600A4E0AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				04C53C122698D7CB00A4E0AA /* ViewController.h */,
 				04C53C132698D7CB00A4E0AA /* ViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04C53C282698D84500A4E0AA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				04C53C152698D7CB00A4E0AA /* Main.storyboard */,
-				04C53C182698D7CE00A4E0AA /* Assets.xcassets */,
 				04C53C1A2698D7CE00A4E0AA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		04C53C292698D85900A4E0AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04C53C182698D7CE00A4E0AA /* Assets.xcassets */,
 				04C53C1D2698D7CE00A4E0AA /* Info.plist */,
 				04C53C1E2698D7CE00A4E0AA /* main.m */,
 			);
-			path = Astronomy;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
