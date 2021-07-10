@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		04C53C0E2698D7CB00A4E0AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C0D2698D7CB00A4E0AA /* AppDelegate.m */; };
 		04C53C112698D7CB00A4E0AA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C102698D7CB00A4E0AA /* SceneDelegate.m */; };
-		04C53C142698D7CB00A4E0AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C132698D7CB00A4E0AA /* ViewController.m */; };
 		04C53C172698D7CB00A4E0AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C53C152698D7CB00A4E0AA /* Main.storyboard */; };
 		04C53C192698D7CE00A4E0AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C53C182698D7CE00A4E0AA /* Assets.xcassets */; };
 		04C53C1C2698D7CE00A4E0AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C53C1A2698D7CE00A4E0AA /* LaunchScreen.storyboard */; };
 		04C53C1F2698D7CE00A4E0AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C1E2698D7CE00A4E0AA /* main.m */; };
+		04C53C3126996ED100A4E0AA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C3026996ED100A4E0AA /* DetailViewController.swift */; };
+		04C53C3426996EFA00A4E0AA /* AstronomyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C3326996EFA00A4E0AA /* AstronomyCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,13 +23,14 @@
 		04C53C0D2698D7CB00A4E0AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04C53C0F2698D7CB00A4E0AA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		04C53C102698D7CB00A4E0AA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		04C53C122698D7CB00A4E0AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04C53C132698D7CB00A4E0AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		04C53C162698D7CB00A4E0AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04C53C182698D7CE00A4E0AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C53C1B2698D7CE00A4E0AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C53C1D2698D7CE00A4E0AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C53C1E2698D7CE00A4E0AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04C53C2F26996ED100A4E0AA /* Astronomy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronomy-Bridging-Header.h"; sourceTree = "<group>"; };
+		04C53C3026996ED100A4E0AA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		04C53C3326996EFA00A4E0AA /* AstronomyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				04C53C262698D82100A4E0AA /* Application */,
+				04C53C2A2698D8A200A4E0AA /* Model */,
 				04C53C272698D83600A4E0AA /* Views */,
+				04C53C2C2698D8B500A4E0AA /* Networking */,
 				04C53C282698D84500A4E0AA /* Storyboards */,
 				04C53C292698D85900A4E0AA /* Resources */,
 			);
@@ -83,8 +87,9 @@
 		04C53C272698D83600A4E0AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04C53C122698D7CB00A4E0AA /* ViewController.h */,
-				04C53C132698D7CB00A4E0AA /* ViewController.m */,
+				04C53C3326996EFA00A4E0AA /* AstronomyCollectionViewController.swift */,
+				04C53C3026996ED100A4E0AA /* DetailViewController.swift */,
+				04C53C2F26996ED100A4E0AA /* Astronomy-Bridging-Header.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +111,20 @@
 				04C53C1E2698D7CE00A4E0AA /* main.m */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		04C53C2A2698D8A200A4E0AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		04C53C2C2698D8B500A4E0AA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +157,7 @@
 				TargetAttributes = {
 					04C53C082698D7CB00A4E0AA = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -177,10 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C53C142698D7CB00A4E0AA /* ViewController.m in Sources */,
 				04C53C0E2698D7CB00A4E0AA /* AppDelegate.m in Sources */,
 				04C53C1F2698D7CE00A4E0AA /* main.m in Sources */,
 				04C53C112698D7CB00A4E0AA /* SceneDelegate.m in Sources */,
+				04C53C3126996ED100A4E0AA /* DetailViewController.swift in Sources */,
+				04C53C3426996EFA00A4E0AA /* AstronomyCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3P8URX7UV;
 				INFOPLIST_FILE = Astronomy/Info.plist;
@@ -332,6 +354,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fgt.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Views/Astronomy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -341,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3P8URX7UV;
 				INFOPLIST_FILE = Astronomy/Info.plist;
@@ -350,6 +376,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fgt.Astronomy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Astronomy/Views/Astronomy-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
