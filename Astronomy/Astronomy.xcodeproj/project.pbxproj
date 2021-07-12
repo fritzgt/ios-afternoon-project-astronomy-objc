@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A3E1DC269C2D41006EA476 /* FGTNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A3E1DB269C2D41006EA476 /* FGTNetwork.m */; };
+		04A3E1E0269C3BB4006EA476 /* FGTMartialSol.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A3E1DF269C3BB4006EA476 /* FGTMartialSol.m */; };
 		04C53C0E2698D7CB00A4E0AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C0D2698D7CB00A4E0AA /* AppDelegate.m */; };
 		04C53C112698D7CB00A4E0AA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C53C102698D7CB00A4E0AA /* SceneDelegate.m */; };
 		04C53C172698D7CB00A4E0AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C53C152698D7CB00A4E0AA /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04A3E1DA269C2D41006EA476 /* FGTNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTNetwork.h; sourceTree = "<group>"; };
+		04A3E1DB269C2D41006EA476 /* FGTNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTNetwork.m; sourceTree = "<group>"; };
+		04A3E1DE269C3BB4006EA476 /* FGTMartialSol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTMartialSol.h; sourceTree = "<group>"; };
+		04A3E1DF269C3BB4006EA476 /* FGTMartialSol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTMartialSol.m; sourceTree = "<group>"; };
 		04C53C092698D7CB00A4E0AA /* Astronomy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronomy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C53C0C2698D7CB00A4E0AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04C53C0D2698D7CB00A4E0AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A3E1DD269C2D4A006EA476 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04A3E1DA269C2D41006EA476 /* FGTNetwork.h */,
+				04A3E1DB269C2D41006EA476 /* FGTNetwork.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		04C53C002698D7CB00A4E0AA = {
 			isa = PBXGroup;
 			children = (
@@ -66,9 +81,9 @@
 				04C53C262698D82100A4E0AA /* Application */,
 				04C53C2A2698D8A200A4E0AA /* Model */,
 				04C53C272698D83600A4E0AA /* Views */,
-				04C53C2C2698D8B500A4E0AA /* Networking */,
 				04C53C282698D84500A4E0AA /* Storyboards */,
 				04C53C292698D85900A4E0AA /* Resources */,
+				04A3E1DD269C2D4A006EA476 /* Networking */,
 			);
 			path = Astronomy;
 			sourceTree = "<group>";
@@ -116,15 +131,10 @@
 		04C53C2A2698D8A200A4E0AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04A3E1DE269C3BB4006EA476 /* FGTMartialSol.h */,
+				04A3E1DF269C3BB4006EA476 /* FGTMartialSol.m */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		04C53C2C2698D8B500A4E0AA /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +163,7 @@
 		04C53C012698D7CB00A4E0AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					04C53C082698D7CB00A4E0AA = {
 						CreatedOnToolsVersion = 12.4;
@@ -197,10 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A3E1E0269C3BB4006EA476 /* FGTMartialSol.m in Sources */,
 				04C53C0E2698D7CB00A4E0AA /* AppDelegate.m in Sources */,
 				04C53C1F2698D7CE00A4E0AA /* main.m in Sources */,
 				04C53C112698D7CB00A4E0AA /* SceneDelegate.m in Sources */,
 				04C53C3126996ED100A4E0AA /* DetailViewController.swift in Sources */,
+				04A3E1DC269C2D41006EA476 /* FGTNetwork.m in Sources */,
 				04C53C3426996EFA00A4E0AA /* AstronomyCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +347,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
