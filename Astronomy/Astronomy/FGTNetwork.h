@@ -6,10 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class FGTMartialSol;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FGTNetwork : NSObject
+
++(void)fetchDataForSol:(int)sol completion:(void(^)(FGTMartialSol*, NSError* error))completion;
 
 @end
 
