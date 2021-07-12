@@ -18,9 +18,9 @@ NS_SWIFT_NAME(MartialSol)
 @property (nonatomic,readonly, nonnull, copy) NSString *earthDate;
 
 - (nonnull instancetype)initWithRoverID:(nonnull NSNumber *)roverID
-                        fullName:(nonnull NSString *)fullName
-                         imgSrc:(nonnull NSString *)imgSrc
-                      earthDate:(nonnull NSString *)earthDate;
+                               fullName:(nonnull NSString *)fullName
+                                 imgSrc:(nonnull NSString *)imgSrc
+                              earthDate:(nonnull NSString *)earthDate;
 
 -(nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 

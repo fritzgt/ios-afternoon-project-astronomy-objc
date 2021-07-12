@@ -10,7 +10,7 @@
 @implementation FGTMartialSol
 
 
-- (instancetype)initWithRoverID:(nonnull NSNumber *)roverID
+- (instancetype)initWithRoverID:(nonnull NSNumber *) roverID
                        fullName:(nonnull NSString *)fullName
                          imgSrc:(nonnull NSString *)imgSrc
                       earthDate:(nonnull NSString *)earthDate{
@@ -28,11 +28,25 @@
 
 -(nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary
 {
+    NSDictionary *dic = dictionary[@"photos"];
+    if(![dic isKindOfClass:NSDictionary.class]) return nil;
+    
+    NSNumber *roverID = [dic objectForKey:@"rover_id"];
+    if(![roverID isKindOfClass: NSNumber.class])return nil;
+    
+    NSString *cameraName = [dic objectForKey:@"full_name"];
+    if(![cameraName isKindOfClass:NSString.class]) return nil;
     
     
-    return [self initWithRoverID:@34
-                        fullName:@""
-                          imgSrc:@""
-                       earthDate:@""];
+    NSString *imgSrc = [dic objectForKey:@"img_src"];
+    if(![imgSrc isKindOfClass:NSString.class]) return nil;
+    
+    NSString *earthDate = [dic objectForKey:@"earth_date"];
+    if(![earthDate isKindOfClass:NSString.class]) return nil;
+    
+    return [self initWithRoverID: roverID
+                        fullName: cameraName
+                          imgSrc: imgSrc
+                       earthDate: earthDate];
 }
 @end
