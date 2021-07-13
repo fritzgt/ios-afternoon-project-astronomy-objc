@@ -13,7 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 NS_SWIFT_NAME(Network)
 @interface FGTNetwork : NSObject
 
-+(void)fetchDataForSol:(int)sol completion:(void(^)(FGTMartialSol*, NSError* error))completion;
+
+
+- (void)fetchDataFor:(NSInteger)sol completion:(void(^)(NSArray<FGTMartialSol *>*, NSError* error))completion;
+
 
 @end
 

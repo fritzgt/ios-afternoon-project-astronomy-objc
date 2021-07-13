@@ -11,7 +11,8 @@
 
 @implementation FGTNetwork
 
-+(void)fetchDataForSol:(int)sol completion:(void(^)(FGTMartialSol*, NSError* error))completion
+
+-(void)fetchDataFor:(NSInteger)sol completion:(void(^)(NSArray<FGTMartialSol *>*, NSError* error))completion
 {
     // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=DEMO_KEY
     
@@ -21,7 +22,7 @@
     NSURLComponents *components = [NSURLComponents componentsWithURL:baseURL resolvingAgainstBaseURL:YES];
     
     components.queryItems = @[
-        [NSURLQueryItem queryItemWithName:@"sol" value: [NSString stringWithFormat:@"%d",sol]],
+        [NSURLQueryItem queryItemWithName:@"sol" value: [NSString stringWithFormat:@"%ld",(long)sol]],
         [NSURLQueryItem queryItemWithName:@"api_key" value:apiKey]];
     
     NSURL *url = components.URL;
@@ -30,7 +31,10 @@
         //Handle errors
         if(error){
             NSLog(@"%@",error);
-            completion(nil,error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil,error);
+            });
+            
             return;
         }
        
@@ -42,15 +46,23 @@
         NSError *jsonError = nil;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData: data options:0 error:&jsonError];
         if(jsonError){
-            completion(nil,jsonError);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil,jsonError);
+            });
+            
         }
         
-        NSLog(@"%@",data);
-        
-        FGTMartialSol *sol = [[FGTMartialSol alloc] initWithDictionary:json];
-        
+        NSMutableArray<FGTMartialSol *> *solArray = [[NSMutableArray alloc] init];
+        NSMutableArray *resultArray = [json objectForKey:@"photos"];
+        for(int i = 0; i < resultArray.count; i++){
+           FGTMartialSol *sol = [[FGTMartialSol alloc] initWithDictionary:resultArray[i]];
+            [solArray addObject: sol];
+        }
         if(sol){
-            completion(sol,nil);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(solArray,nil);
+            });
+            
         }else{
             NSLog(@"Unexpeccted JSON: %@", json);
         }

@@ -28,25 +28,30 @@
 
 -(nonnull instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary
 {
-    NSDictionary *dic = dictionary[@"photos"];
-    if(![dic isKindOfClass:NSDictionary.class]) return nil;
+//    NSDictionary *photos = [dictionary objectForKey:@"photos"];
+//    if(![photos isKindOfClass:NSDictionary.class]) return nil;
+//
+    NSDictionary *camera = [dictionary objectForKey:@"camera"];
+    if(![camera isKindOfClass:NSDictionary.class]) return nil;
     
-    NSNumber *roverID = [dic objectForKey:@"rover_id"];
+    NSNumber *roverID = [camera objectForKey:@"rover_id"];
     if(![roverID isKindOfClass: NSNumber.class])return nil;
     
-    NSString *cameraName = [dic objectForKey:@"full_name"];
+    NSString *cameraName = [camera objectForKey:@"full_name"];
     if(![cameraName isKindOfClass:NSString.class]) return nil;
     
     
-    NSString *imgSrc = [dic objectForKey:@"img_src"];
+    NSString *imgSrc = [dictionary objectForKey:@"img_src"];
     if(![imgSrc isKindOfClass:NSString.class]) return nil;
     
-    NSString *earthDate = [dic objectForKey:@"earth_date"];
+    NSString *earthDate = [dictionary objectForKey:@"earth_date"];
     if(![earthDate isKindOfClass:NSString.class]) return nil;
     
     return [self initWithRoverID: roverID
                         fullName: cameraName
                           imgSrc: imgSrc
                        earthDate: earthDate];
+    
+ 
 }
 @end
