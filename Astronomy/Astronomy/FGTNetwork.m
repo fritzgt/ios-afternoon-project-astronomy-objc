@@ -6,6 +6,8 @@
 //
 
 #import "FGTNetwork.h"
+#import "FGTMartialSol.h"
+
 
 @implementation FGTNetwork
 
@@ -26,10 +28,33 @@
     
     [[NSURLSession.sharedSession dataTaskWithURL: url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         //Handle errors
-        
+        if(error){
+            NSLog(@"%@",error);
+            completion(nil,error);
+            return;
+        }
+       
+        if(!data){
+            NSLog(@"No data returned from url");
+            return;
+        }
         //Handle data parsing
+        NSError *jsonError = nil;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData: data options:0 error:&jsonError];
+        if(jsonError){
+            completion(nil,jsonError);
+        }
         
-        //Send completion in main queue 
+        NSLog(@"%@",data);
+        
+        FGTMartialSol *sol = [[FGTMartialSol alloc] initWithDictionary:json];
+        
+        if(sol){
+            completion(sol,nil);
+        }else{
+            NSLog(@"Unexpeccted JSON: %@", json);
+        }
+ 
     }]resume];
 }
 
